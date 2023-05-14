@@ -1,0 +1,51 @@
+.menuContainer {
+
+  width: fit-content;
+
+  :global {
+
+    .menu {
+
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+  
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+  
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+  
+      list-style: none;
+  
+      &.dark {
+        color: #ffffff;
+        li.selected {
+          border-bottom: 1px solid #ffffff;
+        }
+      }
+    
+      &.light {
+        color: #1a1a1a;
+        li.selected {
+          border-bottom: 1px solid #1a1a1a;
+        }
+      }
+  
+      li {
+        cursor: pointer;
+        padding-bottom: 5px;
+      }
+  
+      li.selected {
+        font-weight: 700;
+      }
+
+    }
+
+  }
+
+}
