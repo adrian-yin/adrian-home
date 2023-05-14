@@ -8,9 +8,21 @@ function Layout({ children }: { children: React.ReactNode }) {
 
   const [currentTheme, setCurrentTheme] = useState(LIGHT_MODE);
 
+  function handleToggleTheme() {
+    setCurrentTheme(currentTheme === LIGHT_MODE ? DARK_MODE : LIGHT_MODE);
+  }
+
+  function handleMenuSelect() {
+
+  }
+
   return (
     <div className={styles.layout}>
-      <Header currentTheme={currentTheme} />
+      <Header
+        currentTheme={currentTheme}
+        toggleThemeCallback={handleToggleTheme}
+        menuSelectCallback={handleMenuSelect}
+      />
       <main>{children}</main>
       <Footer />
     </div>

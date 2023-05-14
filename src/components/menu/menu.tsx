@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 import styles from './menu.module.scss';
-import { LIGHT_MODE, DARK_MODE } from "@/configs/themes";
 
 function Menu({ 
   menuItems,
   themeName,
-  selectCallBack 
+  callback 
 }: { 
   menuItems: Array<{
     name: string,
@@ -13,7 +12,7 @@ function Menu({
     default: boolean
   }>,
   themeName: string,
-  selectCallBack: Function
+  callback: Function
 }) {
 
   const [selectedItem, setSelectedItem]: [string, Function] = useState('');
@@ -29,7 +28,7 @@ function Menu({
 
   function handleClickMenuItem(itemName: string) {
     setSelectedItem(itemName);
-    selectCallBack(itemName);
+    callback(itemName);
   }
 
   const menuListItems = menuItems.map((item) => 

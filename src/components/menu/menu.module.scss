@@ -2,6 +2,8 @@
 
   width: fit-content;
 
+  display: inline-block;
+
   :global {
 
     .menu {
@@ -24,14 +26,14 @@
       &.dark {
         color: #ffffff;
         li.selected {
-          border-bottom: 1px solid #ffffff;
+          border-bottom-color: #ffffff;
         }
       }
     
       &.light {
         color: #1a1a1a;
         li.selected {
-          border-bottom: 1px solid #1a1a1a;
+          border-bottom-color: #1a1a1a;
         }
       }
   
@@ -42,6 +44,8 @@
   
       li.selected {
         font-weight: 700;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
       }
 
     }
