@@ -1,10 +1,18 @@
 html, body {
   padding: 0;
   margin: 0;
+  height: 100%;
   font-family: 'Inter';
-  line-height: 1.5;
-  font-size: 16px;
-  color: #20242b;
+
+  transition: background-color 0.8s;
+}
+
+body.light {
+  background-color: #ffffff;
+}
+
+body.dark {
+  background-color: #090D1F;
 }
 
 * {

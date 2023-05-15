@@ -1,0 +1,30 @@
+.textContainer {
+  
+  width: fit-content;
+
+  display: inline-block;
+
+  :global {
+
+    .text {
+
+      width: 100%;
+      height: 100%;
+
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+
+      &.light {
+        color: #1a1a1a;
+      }
+
+      &.dark {
+        color: #ffffff;
+      }
+
+    }
+
+  }
+
+}

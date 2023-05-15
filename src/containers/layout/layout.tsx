@@ -1,15 +1,25 @@
 import styles from './layout.module.scss';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LIGHT_MODE, DARK_MODE } from '@/configs/themes';
 
 function Layout({ children }: { children: React.ReactNode }) {
 
   const [currentTheme, setCurrentTheme] = useState(LIGHT_MODE);
 
+  useEffect(() => {
+    document.body.classList.remove(LIGHT_MODE);
+    document.body.classList.remove(DARK_MODE);
+    document.body.classList.add(currentTheme);
+  }, [currentTheme]);
+
   function handleToggleTheme() {
-    setCurrentTheme(currentTheme === LIGHT_MODE ? DARK_MODE : LIGHT_MODE);
+    if (currentTheme === LIGHT_MODE) {
+      setCurrentTheme(DARK_MODE);
+    } else {
+      setCurrentTheme(LIGHT_MODE);
+    }
   }
 
   function handleMenuSelect() {
