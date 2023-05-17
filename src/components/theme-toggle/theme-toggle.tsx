@@ -1,17 +1,23 @@
 import styles from './theme-toggle.module.scss';
 import Moon from '@/assets/logo/moon.svg';
 import Sun from '@/assets/logo/sun.svg';
+import { DARK } from '@/configs/themes';
+import { LIGHT } from '@/configs/themes';
 
 function ThemeToggle({
   themeName,
-  callback,
+  toggleThemeCallback,
 }: {
   themeName: string,
-  callback: Function
+  toggleThemeCallback: Function
 }) {
 
   function handleClick() {
-    callback();
+    if (themeName === DARK) {
+      toggleThemeCallback(LIGHT);
+    } else if (themeName === LIGHT) {
+      toggleThemeCallback(DARK);
+    }
   }
 
   return (

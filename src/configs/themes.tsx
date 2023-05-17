@@ -1,3 +1,2 @@
-export const DARK_MODE = 'dark';
-export const LIGHT_MODE = 'light';
-export let currentTheme = LIGHT_MODE;
+export const DARK = 'dark';
+export const LIGHT = 'light';

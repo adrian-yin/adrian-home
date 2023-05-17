@@ -1,0 +1,32 @@
+@import "./theme-variable.scss";
+
+
+@mixin background-color($color) {
+  background-color: $color;
+  [theme-name="light"] & {
+    background-color: $background-color-light;
+  }
+  [theme-name="dark"] & {
+    background-color: $background-color-dark;
+  }
+}
+
+@mixin color($color) {
+  color: $color;
+  [theme-name="light"] & {
+    color: $color-light;
+  }
+  [theme-name="dark"] & {
+    color: $color-dark;
+  }
+}
+
+@mixin border-color($color) {
+  border-color: $color;
+  [theme-name="light"] & {
+    border-color: $border-color-light;
+  }
+  [theme-name="dark"] & {
+    border-color: $border-color-dark;
+  }
+}

@@ -1,3 +1,5 @@
+@import "../../styles/theme-variable.scss";
+
 .themeToggleContainer {
 
   width: 96px;
@@ -25,18 +27,18 @@
       cursor: pointer;
 
       &.light {
-        background-color: #090d1f;
+        background-color: $background-color-dark;
         .right .circle {
           visibility: visible;
-          background-color: #ffffff;
+          background-color: $background-color-light;
         }
       }
 
       &.dark {
-        background-color: #ffffff;
+        background-color: $background-color-light;
         .left .circle {
           visibility: visible;
-          background-color: #090d1f;
+          background-color: $background-color-dark;
         }
       }
 

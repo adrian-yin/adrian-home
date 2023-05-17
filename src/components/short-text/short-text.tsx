@@ -1,9 +1,9 @@
 import styles from './short-text.module.scss';
 
-function ShortText({ themeName, text }: { themeName: string, text: string }) {
+function ShortText({ text }: { text: string }) {
   return (
     <div className={styles.textContainer}>
-      <div className={`text ${themeName}`}>
+      <div className="text">
         {text}
       </div>
     </div>

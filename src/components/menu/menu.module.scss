@@ -1,3 +1,6 @@
+@import "../../styles/theme-variable.scss";
+@import "../../styles/theme-mixin.scss";
+
 .menuContainer {
 
   width: fit-content;
@@ -22,19 +25,10 @@
       font-weight: 400;
   
       list-style: none;
-  
-      &.dark {
-        color: #ffffff;
-        li.selected {
-          border-bottom-color: #ffffff;
-        }
-      }
-    
-      &.light {
-        color: #1a1a1a;
-        li.selected {
-          border-bottom-color: #1a1a1a;
-        }
+
+      @include color($color-default);
+      li.selected {
+        @include border-color($border-color-default);
       }
   
       li {

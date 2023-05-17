@@ -3,7 +3,6 @@ import styles from './menu.module.scss';
 
 function Menu({ 
   menuItems,
-  themeName,
   callback 
 }: { 
   menuItems: Array<{
@@ -11,7 +10,6 @@ function Menu({
     label: string,
     default: boolean
   }>,
-  themeName: string,
   callback: Function
 }) {
 
@@ -43,7 +41,7 @@ function Menu({
 
   return (
     <div className={styles.menuContainer}>
-      <menu className={`menu ${themeName}`}>
+      <menu className="menu">
           {menuListItems}
       </menu>
     </div>

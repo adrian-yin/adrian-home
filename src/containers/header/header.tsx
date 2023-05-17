@@ -1,6 +1,9 @@
 import styles from './header.module.scss';
+
 import { MENU_ITEMS } from '@/configs/menu-config';
 import { AUTHOR_NAME } from '@/configs/info';
+
+import Link from 'next/link';
 
 import ShortText from '@/components/short-text/short-text';
 import Menu from '@/components/menu/menu';
@@ -18,10 +21,12 @@ function Header({
 
   return (
     <div className={styles.header}>
-      <ShortText themeName={currentTheme} text={AUTHOR_NAME}/>
+      <Link href="/">
+        <ShortText text={AUTHOR_NAME}/>
+      </Link>
       <div className="right">
-        <Menu menuItems={MENU_ITEMS} themeName={currentTheme} callback={menuSelectCallback} />
-        <ThemeToggle themeName={currentTheme} callback={toggleThemeCallback} />
+        <Menu menuItems={MENU_ITEMS} callback={menuSelectCallback} />
+        <ThemeToggle themeName={currentTheme} toggleThemeCallback={toggleThemeCallback} />
       </div>
     </div>
   );

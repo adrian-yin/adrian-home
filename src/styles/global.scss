@@ -1,18 +1,13 @@
+@import './theme-variable.scss';
+@import './theme-mixin.scss';
+
 html, body {
   padding: 0;
   margin: 0;
   height: 100%;
   font-family: 'Inter';
-
-  transition: background-color 0.8s;
-}
-
-body.light {
-  background-color: #ffffff;
-}
-
-body.dark {
-  background-color: #090D1F;
+  @include background-color($background-color-default);
+  transition: all 1s;
 }
 
 * {

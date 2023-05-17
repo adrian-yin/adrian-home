@@ -2,24 +2,24 @@ import styles from './layout.module.scss';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { useEffect, useState } from 'react';
-import { LIGHT_MODE, DARK_MODE } from '@/configs/themes';
+import { LIGHT, DARK } from '@/configs/themes';
 
 function Layout({ children }: { children: React.ReactNode }) {
 
-  const [currentTheme, setCurrentTheme] = useState(LIGHT_MODE);
+  const [currentTheme, setCurrentTheme] = useState('');
 
   useEffect(() => {
-    document.body.classList.remove(LIGHT_MODE);
-    document.body.classList.remove(DARK_MODE);
-    document.body.classList.add(currentTheme);
+    const currentThemeStorage = localStorage.getItem('currentTheme') || DARK;
+    setCurrentTheme(currentThemeStorage);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('theme-name', currentTheme)
   }, [currentTheme]);
 
-  function handleToggleTheme() {
-    if (currentTheme === LIGHT_MODE) {
-      setCurrentTheme(DARK_MODE);
-    } else {
-      setCurrentTheme(LIGHT_MODE);
-    }
+  function handleToggleTheme(themeName: string) {
+    setCurrentTheme(themeName);
+    localStorage.setItem('currentTheme', themeName);
   }
 
   function handleMenuSelect() {
