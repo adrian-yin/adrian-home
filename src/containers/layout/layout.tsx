@@ -2,7 +2,7 @@ import styles from './layout.module.scss';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { useEffect, useState } from 'react';
-import { LIGHT, DARK } from '@/configs/themes';
+import { DARK } from '@/configs/themes';
 
 function Layout({ children }: { children: React.ReactNode }) {
 

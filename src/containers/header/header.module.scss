@@ -1,7 +1,12 @@
+@import "../../styles/theme-variable.scss";
+
 .header {
 
+  position: fixed;
+
   padding: 30px 112px;
-  height: 125px;
+  width: 100%;
+  height: $header-height;
 
   display: flex;
   justify-content: space-between;

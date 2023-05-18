@@ -1,4 +1,4 @@
-import Layout from '../containers/layout/layout';
+import Layout from '@/containers/layout/layout';
 import Head from 'next/head';
 
 function Home() {
