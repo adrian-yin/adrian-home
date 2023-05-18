@@ -36,7 +36,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Layout;

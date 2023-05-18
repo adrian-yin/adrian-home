@@ -1,23 +1,41 @@
 @import "../../styles/theme-variable.scss";
+@import "../../styles/theme-mixin.scss";
 
-.header {
+.headerContainer {
 
-  position: fixed;
-
-  padding: 30px 112px;
-  width: 100%;
-  height: $header-height;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 
   :global {
-    .right {
+
+    .header {
+      position: fixed;
+      top: 0;
+
+      padding: 30px 112px;
+      width: 100%;
+      max-width: 1440px;
+      height: $header-height;
+      
+      @include background-color($background-color-default);
+      transition: background-color 1s;
+
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 22px;
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
     }
+
+    .placeholer {
+      position: relative;
+      height: $header-height;
+      z-index: -1;
+    }
+    
   }
 
 }

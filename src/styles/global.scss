@@ -2,12 +2,17 @@
 @import './theme-mixin.scss';
 
 html, body {
+  position: relative;
   padding: 0;
-  margin: 0;
   height: 100%;
   font-family: 'Inter';
-  @include background-color($background-color-default);
   transition: all 1s;
+}
+
+body {
+  margin: auto;
+  max-width: 1440px;
+  @include background-color($background-color-default);
 }
 
 * {

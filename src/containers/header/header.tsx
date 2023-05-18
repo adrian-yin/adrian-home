@@ -20,14 +20,17 @@ function Header({
 }) {
 
   return (
-    <div className={styles.header}>
-      <Link href="/">
-        <ShortText text={AUTHOR_NAME}/>
-      </Link>
-      <div className="right">
-        <Menu menuItems={MENU_ITEMS} callback={menuSelectCallback} />
-        <ThemeToggle themeName={currentTheme} toggleThemeCallback={toggleThemeCallback} />
+    <div className={styles.headerContainer}>
+      <div className="header">
+        <Link href="/">
+          <ShortText text={AUTHOR_NAME}/>
+        </Link>
+        <div className="right">
+          <Menu menuItems={MENU_ITEMS} callback={menuSelectCallback} />
+          <ThemeToggle themeName={currentTheme} toggleThemeCallback={toggleThemeCallback} />
+        </div>
       </div>
+      <div className="placeholer"></div>
     </div>
   );
 }
